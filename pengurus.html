@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Struktur Organisasi</title>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f2d77d;
+      --black: #151515;
+      --white: #ffffff;
+      --paper: #f7f7f5;
+      --line: #d4af37;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--black);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+      padding: 34px 16px;
+      color: var(--white);
+      text-align: center;
+      background: var(--black);
+      border-bottom: 5px solid var(--gold);
+    }
+    header h1 {
+      margin: 0;
+      color: var(--gold-light);
+      font-family: Georgia, serif;
+      font-size: clamp(26px, 5vw, 40px);
+      letter-spacing: 1px;
+    }
+    main {
+      width: min(1050px, calc(100% - 28px));
+      margin: 36px auto 50px;
+    }
+    .chart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .level {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      width: 100%;
+    }
+    .node {
+      width: 220px;
+      min-height: 94px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid #e1dfd7;
+      border-top: 4px solid var(--gold);
+      border-radius: 12px;
+      box-shadow: 0 7px 20px rgba(0,0,0,.06);
+    }
+    .node.main-node {
+      color: var(--white);
+      background: var(--black);
+      border: 1px solid var(--gold);
+      border-top: 4px solid var(--gold-light);
+    }
+    .position {
+      color: #92711d;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+    .main-node .position { color: var(--gold-light); }
+    .person {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .connector {
+      width: 2px;
+      height: 26px;
+      background: var(--line);
+    }
+    .branch-line {
+      width: min(700px, 80%);
+      height: 2px;
+      background: var(--line);
+    }
+    .lower-level {
+      position: relative;
+      width: min(900px, 100%);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(190px, 1fr));
+      gap: 18px;
+      padding-top: 26px;
+    }
+    .lower-level::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: var(--line);
+    }
+    .lower-level .node-wrap {
+      position: relative;
+    }
+    .lower-level .node-wrap::before {
+      content: "";
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      height: 26px;
+      width: 2px;
+      background: var(--line);
+    }
+    .lower-level .node { width: 100%; }
+    @media (max-width: 680px) {
+      main { width: min(100% - 22px, 440px); margin-top: 26px; }
+      .lower-level {
+        width: min(280px, 100%);
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding-top: 0;
+      }
+      .lower-level::before { display: none; }
+      .lower-level .node-wrap::before {
+        top: -16px;
+        height: 16px;
+      }
+      .lower-level .node-wrap:first-child::before { display: none; }
+      .level { gap: 12px; }
+      .node { width: min(220px, 100%); }
+      .branch-line { width: 65%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>STRUKTUR ORGANISASI</h1>
+  </header>
+
+  <main>
+    <section class="chart" aria-label="Bagan struktur organisasi">
+      <!-- Ganti teks jabatan dan nama orang sesuai kebutuhan. -->
+      <div class="level">
+        <div class="node main-node">
+          <div class="position">Ketua</div>
+          <div class="person">Arman Maulana</div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+      <div class="level">
+        <div class="node">
+          <div class="position">Wakil Ketua</div>
+          <div class="person">Nama Wakil Ketua</div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+      <div class="level">
+        <div class="node">
+          <div class="position">Sekretaris</div>
+          <div class="person">Indah</div>
+        </div>
+        <div class="node">
+          <div class="position">Bendahara</div>
+          <div class="person">Nama Bendahara</div>
+        </div>
+      </div>
+
+      <div class="connector"></div>
+      <div class="branch-line"></div>
+      <div class="lower-level">
+        <div class="node-wrap">
+          <div class="node">
+            <div class="position">Koordinator Bidang I</div>
+            <div class="person">Nama Koordinator</div>
+          </div>
+        </div>
+        <div class="node-wrap">
+          <div class="node">
+            <div class="position">Koordinator Bidang II</div>
+            <div class="person">Nama Koordinator</div>
+          </div>
+        </div>
+        <div class="node-wrap">
+          <div class="node">
+            <div class="position">Koordinator Bidang III</div>
+            <div class="person">Nama Koordinator</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lakebulawang.">
+  <title>Lake Bulawang</title>
+  <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/Fq4yF7xG/Logo.png">
+  <style>
+    :root{--ink:#171717;--gold:#c99b45;--cream:#f7f3eb;--muted:#777;--white:#fff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(23,23,23,.96);color:#fff;box-shadow:0 3px 15px #0002}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;letter-spacing:1px;font-size:1.15rem}.brand span{color:var(--gold)}
+    nav{display:flex;gap:22px;align-items:center}nav a{font-size:.9rem;color:#eee}nav a:hover{color:var(--gold)}
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:1.7rem;cursor:pointer}
+    .hero{min-height:590px;display:grid;place-items:center;text-align:center;color:#fff;background:linear-gradient(#111b,#111b),url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .hero-content{max-width:780px;padding:80px 20px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.78rem;font-weight:bold}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.08;margin:18px 0}.hero p{font-size:1.08rem;color:#eee;max-width:650px;margin:0 auto 30px}
+    .btn{display:inline-block;background:var(--gold);color:#171717;padding:13px 23px;border-radius:4px;font-weight:bold;border:0;cursor:pointer}
+    .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+    .btn-outline{background:transparent;border:1px solid #fff;color:#fff;margin-left:9px}
+    section{padding:82px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 42px}.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0}.section-head p{color:var(--muted)}
+    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .about-image{width:100%;height:390px;object-fit:cover;border-radius:8px}
+    .about-copy h2{font-size:2.2rem;margin:8px 0 16px}.about-copy p{color:#666;margin-bottom:15px}
+    .soft{background:var(--cream)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 8px 25px #0000000c}
+    .card img{width:100%;height:210px;object-fit:cover;display:block}.card-body{padding:22px}.card-body h3{margin-bottom:9px}.card-body p{color:var(--muted);font-size:.95rem}
+    .vision{background:#1d1d1d;color:white}.vision .section-head p{color:#ccc}
+    .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.vision-box{border:1px solid #ffffff25;padding:28px;border-radius:8px}.vision-box h3{color:var(--gold);font-size:1.4rem;margin-bottom:12px}.vision-box p,.vision-box li{color:#ddd}.vision-box ul{padding-left:20px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery img{width:100%;height:230px;object-fit:cover;border-radius:6px;transition:.25s}.gallery img:hover{transform:scale(1.02)}
+    .team-card{text-align:center;padding:25px}.avatar{width:105px;height:105px;border-radius:50%;object-fit:cover;margin-bottom:14px}.team-card p{color:var(--muted);font-size:.9rem}
+    .join{background:linear-gradient(120deg,#211d17,#3b2d19);color:#fff}.join .section-head p{color:#ddd}
+    form{background:#fff;color:var(--ink);padding:28px;border-radius:8px;max-width:720px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:.9rem;font-weight:bold}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:4px;font:inherit}textarea{min-height:110px;resize:vertical}
+    form button{grid-column:1/-1}
+    .contact-info p{margin:12px 0;color:#666}.contact-info strong{color:var(--ink)}
+    footer{background:#171717;color:#ddd;padding:28px 0;text-align:center;font-size:.9rem}footer span{color:var(--gold)}
+    .notice{display:none;margin-top:12px;color:#267444;font-weight:bold}
+    @media(max-width:800px){nav{display:none;position:absolute;top:72px;left:0;right:0;background:#171717;padding:20px;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu-btn{display:block}.cards{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){section{padding:62px 0}.cards,.vision-grid,.gallery{grid-template-columns:1fr}.gallery img{height:250px}.hero{min-height:520px}.btn-outline{margin:10px 0 0}.hero-content{padding:65px 15px}form{grid-template-columns:1fr;padding:20px}.field.full{grid-column:auto}form button{grid-column:auto}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">LAKE<span>BULAWANG</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <nav id="navLinks">
+      <a href="#home">Beranda</a>
+      <a href="#profil">Profil</a>
+      <a href="#program">Program</a>
+      <a href="#sanggar">Sanggar Seni</a>
+      <a href="#galeri">Galeri</a>
+      <a href="pengurus.html">Pengurus</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">Profesional • Independen • Musyawarah • Ikhlas • Jujur • Bertanggung Jawab</div>
+      <h1><span style="color:#d9ad5b">LAKE BULAWANG</span></h1>
+      <h2>LEMBAGA KAJIAN, PENELITIAN & SANGGAR SENI<br></h2>
+      <p>Wadah belajar, berkarya, dan berkolaborasi untuk menjaga seni serta budaya tetap hidup di tengah masyarakat.</p>
+      <a class="btn" href="#profil">Kenali Kami</a>
+      <a class="btn btn-outline" href="#gabung">Gabung Komunitas</a>
+    </div>
+  </section>
+
+  <section id="profil">
+    <div class="container about-grid">
+      <img class="about-image" src="Kak Ika.jpg" alt="Pertunjukan seni di panggung">
+      <div class="about-copy">
+        <div class="eyebrow">Tentang Kami</div>
+        <h2>Maksud dan Tujuan</h2>
+        <p><strong>LAKE BULAWANG</strong> Berpartisipasi dalam hal mengembangkan Sumber Daya Manusia yang bertujuan meningkatkan wawasan dan kesejahteraan masyarakat melalui penelitian, pendidikan, pelatihan, seminar, konsultasi, dan jasa-jasa lainnya.</p>
+        <p>Kami menjadi ruang bagi generasi muda dan masyarakat untuk mengembangkan potensi, mempererat persaudaraan, serta memperkenalkan kekayaan seni lokal kepada khalayak luas.</p>
+        <a class="btn" href="#kontak">Hubungi Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="program">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Apa yang Kami Kerjakan</div><h2>Program & Kegiatan</h2><p>Ruang untuk belajar, berkontribusi, dan menghasilkan karya bersama.</p></div>
+      <div class="cards">
+        <article class="card"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" alt="Diskusi komunitas"><div class="card-body"><h3>Kegiatan Sosial</h3><p>Bakti sosial, kerja bakti, aksi kemanusiaan, dan kegiatan yang bermanfaat bagi lingkungan.</p></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Pentas seni"><div class="card-body"><h3>Pentas & Festival</h3><p>Mengadakan pertunjukan, festival budaya, pameran, dan ruang apresiasi karya anggota.</p></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80" alt="Pelatihan bersama"><div class="card-body"><h3>Pelatihan & Edukasi</h3><p>Workshop, diskusi, pelatihan keterampilan, dan pengembangan kapasitas generasi muda.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sanggar">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Wadah Ekspresi</div><h2>Sanggar Seni</h2><p>Belajar dan berproses untuk menjaga warisan budaya serta melahirkan kreativitas baru.</p></div>
+      <div class="cards">
+        <article class="card"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80" alt="Seni tari"><div class="card-body"><h3>Seni Tari</h3><p>Pelatihan tari tradisional dan kreasi, olah gerak, serta persiapan pertunjukan.</p></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Seni musik"><div class="card-body"><h3>Seni Musik</h3><p>Eksplorasi musik tradisional dan modern, vokal, serta permainan alat musik.</p></div></article>
+        <article class="card"><img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=800&q=80" alt="Seni teater"><div class="card-body"><h3>Teater & Sastra</h3><p>Pengembangan akting, penulisan naskah, puisi, dan pementasan cerita budaya.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="vision" id="visi">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow"></div><h2>Visi & Misi</h2><p>Landasan bersama dalam menjalankan organisasi.</p></div>
+      <div class="vision-grid">
+        <div class="vision-box"><h3>Visi</h3><p></p>Mewujudkan stabilitas masyarakat melalui pengembangan pendidikan dan kebudayaan dalam arti yang luas yang berkemanfaatan, aman, tertib, damai dan menghormati serta menjaga berkesinambungannya nilai-nilai hak-hak azasi manusia, nilai-nilai kearifan lokal dan ilmu pengetahuan.</div>
+        <div class="vision-box"><h3>Misi</h3><ul>
+          <li>Mendorong pengembangan pendidikan, kesenian, budaya dan kesusasteraan yang bersifat praktis</li>
+          <li>Mendorong pengembalian peranan budaya sebagai fungsi maintainence (fungsi pertahanan nilai).</li>
+          <li>Mendorong terwujudnya sistem hukum yang berkeadilan, berkemanfaatan, berkepastian, aman, tertib, damai, dan menghormati hak-hak azasi manusia.</li>
+          <li>Mendorong terciptanya sistem pemerintahan yang demokratis, transfaran, kapabel, kredibel, dan akuntabel.</li>
+          <li>Mendorong penguatan kapasitas masyarakat dan kapasitas birokrasi hukum dan pemerintahan.</li>
+          <li>Mengupayakan penghormatan dan penghargaan terhadap hak-hak azasi manusia.</li>
+          <li>Menjaga dan memelihara kesinambungan nilai-nilai kearifan lokal dan kebudayaan bangsa.</li>
+          <li>Mendorong penguatan kapasitas masyarakat yang berdaya saing.</li>
+          <li>Meningkatkan kualitas sumber daya manusia.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri">
+    <div class="container">
+      <div class="section-head"><div class="eyebrow">Cerita dalam Gambar</div><h2>Galeri Kegiatan</h2><p>Dokumentasi perjalanan dan karya Lake Bulawang.</p></div>
+      <div class="gallery">
+        <img src="image/Tampil Pifaf.JPG" alt="Dokumentasi pertunjukan">
+        <img src="image/Tari Sandeq.JPG" alt="Tari Sandeq">
+        <img src="image/Penari Cilik.JPG" alt="PIFAF">
+        <img src="image/Pelatihan 1.JPG" alt="Latihan">
+        <img src="image/Tari Mapande.JPG" alt="Sosialisasi">
+        <img src="image/download (4).JPG" alt="Pelatihan">
+      </div>
+    </div>
+  </section>
+
+<footer><div class="container"><span id="year"> </span> <span>LAKE BULAWANG</span> —Lembaga Kajian, Penelitian & Sanggar Seni.</div></footer>
+
+</script>
+</body>
+</html>
